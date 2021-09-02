@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { getGifs } from '../helpers/getGifs';
+// import { getGifs } from '../helpers/getGifs';
+import { GifContainer } from './GifContainer';
 
-export const SearchGif = () => {
+export const SearchGif = ({setCategories, categories}) => {
 
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('');
 
     const handleInputValue = (e) => {
         setInputValue(e.target.value);
@@ -13,8 +14,10 @@ export const SearchGif = () => {
         e.preventDefault();
         if(inputValue.trim().length > 2) {
             //get data
-            const gifs = await getGifs(inputValue);
-            console.log(gifs);
+            // const gifs = await getGifs(inputValue);
+            setCategories([inputValue]);
+            setInputValue('');
+            // setData([gifs]);
         }
     }
 
@@ -25,7 +28,11 @@ export const SearchGif = () => {
                 <button className="btn btn-dark ms-3">Search</button>
             </form>
             <div className="container">
-                
+                {
+                    categories.map((category) => 
+                        <GifContainer key={category} category={category} />
+                    )
+                }
             </div>
         </div>
     )
