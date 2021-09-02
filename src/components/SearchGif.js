@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getGifs } from '../helpers/getGifs';
 
 export const SearchGif = () => {
 
@@ -8,10 +9,12 @@ export const SearchGif = () => {
         setInputValue(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         if(inputValue.trim().length > 2) {
             //get data
+            const gifs = await getGifs(inputValue);
+            console.log(gifs);
         }
     }
 
