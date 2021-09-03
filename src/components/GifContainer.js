@@ -9,7 +9,7 @@ export const GifContainer = ({category}) => {
         <div className="card-grid">
             {
                 data.map((img)=>
-                    <img src={img.url} alt={img.title} />
+                    <img src={img.url} key={img.id} alt={img.title} />
                 )
             }
         </div>
