@@ -16,7 +16,7 @@ export const SearchGif = ({setCategories, categories, listCategories, setListCat
             //get data
             // const gifs = await getGifs(inputValue);
             setCategories([inputValue]);
-            setListCategories([inputValue,...listCategories]);
+            setListCategories([inputValue,...listCategories.slice(0,9)]);
             setInputValue('');
             // setData([gifs]);
         }

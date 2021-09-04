@@ -10,7 +10,7 @@ export const GifContainer = ({ category }) => {
                 {
                     data.map((img) =>
                         <div className="card col-sm-6 col-md-4 p-0" key={img.id}>
-                            <img src={img.url} alt={img.title} className="card-img " />
+                            <img src={img.url} alt={img.title} className="card-img gif-content" />
                         </div>
                     )
                 }

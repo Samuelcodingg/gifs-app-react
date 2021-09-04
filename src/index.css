@@ -12,3 +12,14 @@ body {
 .pointer {
   cursor: pointer;
 }
+
+/*container section*/
+
+.container-section {
+  min-height: 68vh;
+}
+
+/*gifs*/
+.gif-content{
+  min-height: 180px;
+}

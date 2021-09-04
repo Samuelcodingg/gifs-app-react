@@ -1,21 +1,20 @@
 import React from 'react'
 
-export const HistoryBar = () => {
+export const HistoryBar = ({listCategories, setCategories}) => {
+
+    const handleSetCategoriesByList = (e) =>{
+        e.preventDefault();
+
+        setCategories([e.target.textContent]);
+    }
+
     return (
         <div className="list-group col-md-3 px-0">
-            <a href="/" className="list-group-item list-group-item-action active bg-dark border-0" aria-current="true">
-                The current link item
-            </a>
-            <a href="/" className="list-group-item list-group-item-action">A second link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A third link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="/" className="list-group-item list-group-item-action">A fourth link item</a>
+            {
+                listCategories.map((category)=>(
+                    <a href="/" key={category} onClick={handleSetCategoriesByList} className="list-group-item list-group-item-action">{category}</a>
+                ))
+            }
         </div>
     )
 }
