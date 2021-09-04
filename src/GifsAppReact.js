@@ -6,11 +6,12 @@ import { Header } from './components/Header';
 const GifsAppReact = () => {
 
   const [categories, setCategories] = useState([]);
+  const [listCategories, setListCategories] = useState([]);
 
   return (
     <>
       <Header />
-      <ContainerSection setCategories={setCategories} categories={categories}/> 
+      <ContainerSection listCategories={listCategories} setListCategories={setListCategories} setCategories={setCategories} categories={categories}/> 
       <Footer />
     </>
   );

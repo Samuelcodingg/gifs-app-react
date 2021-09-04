@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import { getGifs } from '../helpers/getGifs';
 import { GifContainer } from './GifContainer';
 
-export const SearchGif = ({setCategories, categories}) => {
+export const SearchGif = ({setCategories, categories, listCategories, setListCategories}) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -16,6 +16,7 @@ export const SearchGif = ({setCategories, categories}) => {
             //get data
             // const gifs = await getGifs(inputValue);
             setCategories([inputValue]);
+            setListCategories([inputValue,...listCategories]);
             setInputValue('');
             // setData([gifs]);
         }
